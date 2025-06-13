@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Player } from '@lottiefiles/react-lottie-player';
 import { Button } from '@/components/ui/button';
 import ClickSpark from '@/components/ui/click-spark';
 import { useLanguage } from '@/shared/contexts/LanguageContext';

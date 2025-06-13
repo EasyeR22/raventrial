@@ -42,6 +42,8 @@ const translations = {
     'features.sharing.description': 'Распространение в один клик участникам команды, заинтересованным лицам или в ваши любимые инструменты продуктивности.',
     'features.search.title': 'Архив с поиском',
     'features.search.description': 'Найдите любое обсуждение, решение или деталь из прошлых встреч с мощными возможностями поиска.',
+    'features.cta': 'Готовы трансформировать ваши встречи?',
+    'features.cta_button': 'Начать →',
     
     // Integrations
     'integrations.title': 'Работает с вашими любимыми инструментами',
@@ -49,53 +51,52 @@ const translations = {
     'integrations.coming_soon': 'И многие другие интеграции скоро появятся',
     
     // Pricing
-    'pricing.title': 'Простые и прозрачные тарифы',
+    'pricing.title': '💼 Тарифы',
     'pricing.subtitle': 'Выберите план, который подходит вашей команде. Изменяйте тариф в любое время.',
     'pricing.monthly': 'Месячно',
     'pricing.annual': 'Годовой',
-    'pricing.discount': 'Скидка 15%',
+    'pricing.discount': 'экономия 17%',
     'pricing.note': 'Все тарифы включают 14-дневный бесплатный период. Кредитная карта не требуется.',
     'pricing.mobile_tip': '💡 3D эффект наклона лучше всего работает на десктопе',
     
     // Pricing Plans
     'plan.lite.name': 'Lite',
-    'plan.lite.description': 'Идеально для небольших команд',
+    'plan.lite.description': 'Для личных встреч',
     'plan.pro.name': 'Pro',
-    'plan.pro.description': 'Лучший выбор для растущих команд',
+    'plan.pro.description': 'Для небольших команд',
     'plan.enterprise.name': 'Enterprise',
-    'plan.enterprise.description': 'Для крупных организаций',
+    'plan.enterprise.description': 'Для крупных команд и организаций',
     
     // Pricing Features
-    'feature.recording_hours': 'часов записи в месяц',
-    'feature.storage': 'облачного хранилища',
-    'feature.team_members': 'участников команды',
-    'feature.analytics': 'аналитика встреч',
-    'feature.export': 'Экспорт в PDF и Word',
-    'feature.integrations': 'Интеграция с популярными сервисами',
-    'feature.support': 'Приоритетная поддержка',
-    'feature.unlimited_recording': 'Неограниченные часы записи',
-    'feature.unlimited_members': 'Неограниченное количество участников',
-    'feature.advanced_analytics': 'Продвинутая аналитика и отчеты',
-    'feature.all_integrations': 'Все интеграции',
-    'feature.personal_manager': 'Персональный менеджер',
-    'feature.sla': 'SLA 99.9%',
+    'feature.lite.1': 'До 3 часов записи в месяц',
+    'feature.lite.2': 'Автоматическая транскрибация',
+    'feature.lite.3': 'Экспорт заметок в PDF',
+    'feature.lite.4': 'Интеграция с Google Meet',
     
-    // Numbers and quantifiers
-    'До 10': 'До 10',
-    'До 3': 'До 3',
-    'До 50': 'До 50',
-    'До 15': 'До 15',
-    'Базовая': 'Базовая',
-    'Расширенная': 'Расширенная',
+    'feature.pro.1': 'До 30 часов записи в месяц',
+    'feature.pro.2': 'Транскрибация и краткие итоги',
+    'feature.pro.3': 'Интеграции: Slack, Zoom, Google Meet',
+    'feature.pro.4': 'Экспорт в Word и PDF',
+    'feature.pro.5': 'Приоритетная обработка',
+    
+    'feature.enterprise.1': 'Неограниченные часы записи',
+    'feature.enterprise.2': 'Совместная работа в командах',
+    'feature.enterprise.3': 'Все интеграции: Slack, Zoom, Meet, Notion и др.',
+    'feature.enterprise.4': 'Персонализированные отчеты',
+    'feature.enterprise.5': 'Персональный менеджер и SLA 99.9%',
     
     // Plan specific
     'plan.popular': 'Самый популярный',
     'plan.from': 'от',
-    'plan.currency': '000₽',
+    'plan.currency': '$',
     'plan.per_month': 'в месяц',
     'plan.per_month_annual': 'в месяц при годовой оплате',
     'plan.get_started': 'Начать работу',
-    'plan.features': 'Возможности',
+    'plan.features': 'Включено',
+    'plan.free': 'БЕСПЛАТНО',
+    'plan.save': 'экономия 17%',
+    'plan.contact': 'Свяжитесь с нами',
+    'plan.lets_talk': 'Обсуждается',
     
     // Reviews
     'reviews.title': 'Что говорят наши пользователи',
@@ -149,6 +150,8 @@ const translations = {
     'features.sharing.description': 'One-click distribution to team members, stakeholders, or your favorite productivity tools.',
     'features.search.title': 'Searchable Archive',
     'features.search.description': 'Find any discussion, decision, or detail from past meetings with powerful search capabilities.',
+    'features.cta': 'Ready to transform your meetings?',
+    'features.cta_button': 'Get Started →',
     
     // Integrations
     'integrations.title': 'Works with your favorite tools',
@@ -156,44 +159,39 @@ const translations = {
     'integrations.coming_soon': 'And many more integrations coming soon',
     
     // Pricing
-    'pricing.title': 'Simple and transparent pricing',
+    'pricing.title': '💼 Pricing',
     'pricing.subtitle': 'Choose the plan that fits your team. Change anytime.',
     'pricing.monthly': 'Monthly',
     'pricing.annual': 'Annual',
-    'pricing.discount': '15% off',
+    'pricing.discount': 'Save 17%',
     'pricing.note': 'All plans include a 14-day free trial. No credit card required.',
     'pricing.mobile_tip': '💡 3D tilt effect works best on desktop',
     
     // Pricing Plans
     'plan.lite.name': 'Lite',
-    'plan.lite.description': 'Perfect for small teams',
+    'plan.lite.description': 'For personal meetings',
     'plan.pro.name': 'Pro',
-    'plan.pro.description': 'Best choice for growing teams',
+    'plan.pro.description': 'For small teams',
     'plan.enterprise.name': 'Enterprise',
-    'plan.enterprise.description': 'For large organizations',
+    'plan.enterprise.description': 'For large teams and organizations',
     
     // Pricing Features
-    'feature.recording_hours': 'hours of recording per month',
-    'feature.storage': 'cloud storage',
-    'feature.team_members': 'team members',
-    'feature.analytics': 'meeting analytics',
-    'feature.export': 'Export to PDF and Word',
-    'feature.integrations': 'Integration with popular services',
-    'feature.support': 'Priority support',
-    'feature.unlimited_recording': 'Unlimited recording hours',
-    'feature.unlimited_members': 'Unlimited team members',
-    'feature.advanced_analytics': 'Advanced analytics and reports',
-    'feature.all_integrations': 'All integrations',
-    'feature.personal_manager': 'Personal manager',
-    'feature.sla': '99.9% SLA',
+    'feature.lite.1': 'Up to 3 hours of recording per month',
+    'feature.lite.2': 'Auto transcription',
+    'feature.lite.3': 'Export notes to PDF',
+    'feature.lite.4': 'Google Meet integration',
     
-    // Numbers and quantifiers
-    'До 10': 'Up to 10',
-    'До 3': 'Up to 3',
-    'До 50': 'Up to 50',
-    'До 15': 'Up to 15',
-    'Базовая': 'Basic',
-    'Расширенная': 'Advanced',
+    'feature.pro.1': 'Up to 30 hours/month',
+    'feature.pro.2': 'Transcripts + summaries',
+    'feature.pro.3': 'Slack, Zoom, Google Meet',
+    'feature.pro.4': 'Export to Word & PDF',
+    'feature.pro.5': 'Priority processing',
+    
+    'feature.enterprise.1': 'Unlimited recording hours',
+    'feature.enterprise.2': 'Team collaboration',
+    'feature.enterprise.3': 'All integrations: Slack, Zoom, Meet, Notion etc.',
+    'feature.enterprise.4': 'Custom reports',
+    'feature.enterprise.5': 'Dedicated manager + SLA 99.9%',
     
     // Plan specific
     'plan.popular': 'Most Popular',
@@ -202,7 +200,11 @@ const translations = {
     'plan.per_month': 'per month',
     'plan.per_month_annual': 'per month, billed annually',
     'plan.get_started': 'Get Started',
-    'plan.features': 'Features',
+    'plan.features': 'Includes',
+    'plan.free': 'FREE',
+    'plan.save': 'Save 17%',
+    'plan.contact': 'Contact us',
+    'plan.lets_talk': "Let's talk",
     
     // Reviews
     'reviews.title': 'What our users say',

@@ -84,8 +84,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, index, isAnnual }) => {
             
             <div className="mt-8">
               <div className="flex items-baseline justify-center">
-                <span className="text-gray-500 text-lg mr-1">{t('plan.from')}</span>
-                                 <motion.span 
+                <motion.span 
                    className="text-5xl font-bold text-gray-900"
                    style={{ fontFamily: 'Gilroy, sans-serif' }}
                    whileHover={{ scale: 1.05 }}
@@ -93,19 +92,41 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, index, isAnnual }) => {
                  >
                   {isAnnual ? plan.annualPrice : plan.monthlyPrice}
                 </motion.span>
-                <span 
-                  className="text-xl text-gray-500 ml-1"
+                {(typeof (isAnnual ? plan.annualPrice : plan.monthlyPrice) === 'number' || 
+                 (typeof (isAnnual ? plan.annualPrice : plan.monthlyPrice) === 'string' && 
+                  typeof (isAnnual ? plan.annualPrice : plan.monthlyPrice) === 'string' &&
+                  (isAnnual ? plan.annualPrice : plan.monthlyPrice).toString().startsWith('$'))) ? (
+                  <span 
+                    className="text-xl text-gray-500 ml-1"
+                    style={{ fontFamily: 'Gilroy, sans-serif' }}
+                  >
+                    / мес
+                  </span>
+                ) : null}
+              </div>
+              {isAnnual && plan.name !== 'Enterprise' && (
+                <motion.p 
+                  className="text-sm text-gray-500 mt-2"
+                  style={{ fontFamily: 'Gilroy, sans-serif' }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {plan.name === 'Lite' ? (
+                    <span className="text-green-600 font-medium">{t('plan.free')}</span>
+                  ) : (
+                    <span className="text-blue-600 font-medium">{t('plan.save')}</span>
+                  )}
+                </motion.p>
+              )}
+              {!isAnnual && (
+                <p 
+                  className="text-sm text-gray-500 mt-2"
                   style={{ fontFamily: 'Gilroy, sans-serif' }}
                 >
-                  {t('plan.currency')}
-                </span>
-              </div>
-              <p 
-                className="text-sm text-gray-500 mt-2"
-                style={{ fontFamily: 'Gilroy, sans-serif' }}
-              >
-                {isAnnual ? t('plan.per_month_annual') : t('plan.per_month')}
-              </p>
+                  {t('plan.per_month')}
+                </p>
+              )}
             </div>
           </CardHeader>
 
@@ -125,7 +146,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, index, isAnnual }) => {
                     className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform-gpu ${
                       plan.popular 
                         ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white hover:from-gray-800 hover:to-gray-700 shadow-lg hover:shadow-2xl' 
-                        : 'bg-white text-gray-900 border-2 border-gray-900 hover:bg-gray-50 hover:border-gray-800'
+                        : 'bg-white text-gray-900 border-2 border-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900'
                     }`}
                     style={{ 
                       fontFamily: 'Gilroy, sans-serif',

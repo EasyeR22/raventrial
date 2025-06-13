@@ -42,13 +42,13 @@ const FAQ: React.FC = () => {
         >
           <h2 
             className="text-4xl md:text-5xl font-bold text-black mb-6"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            style={{ fontFamily: 'Gilroy, sans-serif' }}
           >
             {t('faq.title')}
           </h2>
           <p 
             className="text-xl text-gray-600 max-w-3xl mx-auto"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            style={{ fontFamily: 'Gilroy, sans-serif' }}
           >
             {t('faq.subtitle')}
           </p>
@@ -69,13 +69,13 @@ const FAQ: React.FC = () => {
               >
                 <AccordionTrigger 
                   className="text-left text-lg font-semibold text-black hover:text-gray-700 py-6"
-                  style={{ fontFamily: 'Inter, sans-serif' }}
+                  style={{ fontFamily: 'Gilroy, sans-serif' }}
                 >
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent 
                   className="text-gray-600 leading-relaxed pb-6"
-                  style={{ fontFamily: 'Inter, sans-serif' }}
+                  style={{ fontFamily: 'Gilroy, sans-serif' }}
                 >
                   {faq.answer}
                 </AccordionContent>
@@ -93,14 +93,14 @@ const FAQ: React.FC = () => {
         >
           <p 
             className="text-gray-600 mb-4"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            style={{ fontFamily: 'Gilroy, sans-serif' }}
           >
             Still have questions?
           </p>
           <ClickSpark sparkColor="#000000" sparkCount={6} sparkSize={3}>
             <motion.button
               className="text-black font-semibold hover:text-gray-700 underline underline-offset-4"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              style={{ fontFamily: 'Gilroy, sans-serif' }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", duration: 0.2 }}

@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
           <div>
             <p 
               className="text-gray-600"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              style={{ fontFamily: 'Gilroy, sans-serif' }}
             >
               © 2024 Raven AI. {t('footer.rights')}
             </p>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                   key={index}
                   href={link.href}
                   className="text-gray-600 hover:text-black transition-colors duration-200"
-                  style={{ fontFamily: 'Inter, sans-serif' }}
+                  style={{ fontFamily: 'Gilroy, sans-serif' }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", duration: 0.2 }}

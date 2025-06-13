@@ -5,27 +5,27 @@ import { Star } from 'lucide-react';
 import { useLanguage } from '@/shared/contexts/LanguageContext';
 
 const Reviews: React.FC = () => {
-  const { t } = useLanguage();
+  const {  } = useLanguage();
   
   const reviews = [
     {
-      name: "Nasimul Huda",
-      title: "CEO, Nasim Spinning Mills",
+      name: "Dimash Yntyqbay",
+      title: "NFactorial Incubator",
       avatar: "https://res-console.cloudinary.com/dq2pbzrtu/thumbnails/v1/image/upload/v1749808016/cGhvdG9fMjAyNS0wNi0wMV8xMS01OS00OF93bmJ1ZG8=/drilldown",
       quote: "Raven has completely revolutionized how we approach business meetings. The real-time transcription is incredibly accurate, and the AI summaries save us hours every week. This platform is the future of meeting productivity.",
       rating: 5,
       date: "2024-06-15"
     },
     {
-      name: "Nazmul Haque",
-      title: "Director, Eastern Industries",
+      name: "Artyqbay Arnur",
+      title: "NFactorial Incubator",
       avatar: "https://res-console.cloudinary.com/dq2pbzrtu/thumbnails/v1/image/upload/v1749808168/YXJudXJfdHNrYnVy/drilldown",
       quote: "Raven is more than just a platform; it's a complete ecosystem for modern teams. From tracking action items to managing follow-ups, it handles everything seamlessly.",
       rating: 5,
       date: "2024-06-15"
     },
     {
-      name: "Fahmida Islam",
+      name: "Yerdaulet Damir",
       title: "Managing Director, Global Textiles Ltd.",
       avatar: "https://res-console.cloudinary.com/dq2pbzrtu/thumbnails/v1/image/upload/v1749808016/cGhvdG9fMjAyMy0xMi0xM18xOS01OC00MV92ZW0zd3I=/drilldown",
       quote: "The search feature on Raven is exceptional. It allows us to find any discussion or decision from past meetings instantly. Game changer for our team.",
@@ -72,9 +72,9 @@ const Reviews: React.FC = () => {
   );
 
   return (
-    <section className="bg-gray-50 py-16 px-4">
+    <section className="bg-gray-900 py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-white rounded-3xl p-12 shadow-sm border border-gray-100">
+        <div className="bg-gray-800 rounded-3xl p-12 shadow-sm border border-gray-700">
           {/* Header Section */}
           <motion.div
             className="text-center mb-12"
@@ -129,18 +129,24 @@ const Reviews: React.FC = () => {
             </div>
             
             <div className="flex justify-center gap-4">
-              <button 
-                className="bg-white hover:bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-medium transition-colors duration-200 shadow"
+              <motion.button 
+                className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 style={{ fontFamily: 'Gilroy, sans-serif' }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 Get a free trial →
-              </button>
-              <button 
-                className="border border-gray-200 text-white hover:bg-gray-800 px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+              </motion.button>
+              <motion.button 
+                className="border-2 border-gray-300 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm hover:shadow-lg transform hover:-translate-y-1"
                 style={{ fontFamily: 'Gilroy, sans-serif' }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 Read more reviews →
-              </button>
+              </motion.button>
             </div>
           </motion.div>
 
@@ -161,7 +167,7 @@ const Reviews: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={index === 0 ? "md:col-span-2 lg:col-span-1 lg:row-span-2" : ""}
               >
-                <Card className="h-full bg-white border border-gray-200 hover:shadow-md transition-all duration-300 rounded-2xl">
+                <Card className="h-full bg-white border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 rounded-2xl transform hover:-translate-y-2 hover:scale-[1.02]">
                   <CardContent className="p-6">
                     {/* Rating and Date */}
                     <div className="flex justify-between items-start mb-4">
@@ -184,11 +190,13 @@ const Reviews: React.FC = () => {
                     
                     {/* Author Info */}
                     <div className="flex items-center space-x-3">
-                      <img
+                      <motion.img
                         src={review.avatar}
                         alt={`${review.name} avatar`}
-                        className="w-10 h-10 rounded-full object-cover"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-gray-100"
                         loading="lazy"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       />
                       <div>
                         <h4 

@@ -19,41 +19,43 @@ const Pricing: React.FC = () => {
 
   const plans: PricingPlan[] = [
     {
-      name: 'Lite',
-      description: 'Для личного использования / For personal use',
+      name: t('plan.lite.name'),
+      description: t('plan.lite.description'),
       monthlyPrice: '$0',
       annualPrice: '$0',
       features: [
-        '3 задачи в месяц / 3 tasks per month',
-        'Простая аналитика / Basic analytics',
-        'Экспорт в PDF / Export to PDF'
+        t('feature.lite.1'),
+        t('feature.lite.2'),
+        t('feature.lite.3'),
+        t('feature.lite.4')
       ],
       popular: false
     },
     {
-      name: 'Pro',
-      description: 'Для фрилансеров и маленьких команд / For freelancers & small teams',
+      name: t('plan.pro.name'),
+      description: t('plan.pro.description'),
       monthlyPrice: '$3',
       annualPrice: '$30',
       features: [
-        'До 30 задач в месяц / Up to 30 tasks per month',
-        'Расширенная аналитика / Advanced analytics',
-        'Интеграции с Google/Notion / Google & Notion integrations',
-        'Экспорт в PDF и Word / Export to PDF & Word'
+        t('feature.pro.1'),
+        t('feature.pro.2'),
+        t('feature.pro.3'),
+        t('feature.pro.4'),
+        t('feature.pro.5')
       ],
       popular: true
     },
     {
-      name: 'Enterprise',
-      description: 'Для организаций / For organizations',
-      monthlyPrice: "Let's talk",
-      annualPrice: "Contact us",
+      name: t('plan.enterprise.name'),
+      description: t('plan.enterprise.description'),
+      monthlyPrice: t('plan.lets_talk'),
+      annualPrice: t('plan.contact'),
       features: [
-        'Неограниченные задачи / Unlimited tasks',
-        'Командный доступ / Team access',
-        'Все интеграции / All integrations',
-        'Персональный менеджер / Dedicated manager',
-        'Приоритетная поддержка / Priority support'
+        t('feature.enterprise.1'),
+        t('feature.enterprise.2'),
+        t('feature.enterprise.3'),
+        t('feature.enterprise.4'),
+        t('feature.enterprise.5')
       ],
       popular: false,
       isEnterprise: true
@@ -104,7 +106,7 @@ const Pricing: React.FC = () => {
               className="text-4xl md:text-6xl font-bold text-black mb-6"
               style={{ fontFamily: 'Gilroy, sans-serif' }}
             >
-              💼 Тарифы / Pricing
+              {t('pricing.title')}
             </motion.h2>
             <motion.p 
               className="text-xl text-gray-600 max-w-3xl mx-auto mb-12"
@@ -113,7 +115,7 @@ const Pricing: React.FC = () => {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Выберите подходящий план для ваших потребностей / Choose the right plan for your needs
+              {t('pricing.subtitle')}
             </motion.p>
 
             {/* Enhanced Pricing Toggle */}
@@ -127,7 +129,7 @@ const Pricing: React.FC = () => {
                 className={`text-lg font-medium transition-all duration-300 ${!isAnnual ? 'text-black scale-105' : 'text-gray-500'}`}
                 style={{ fontFamily: 'Gilroy, sans-serif' }}
               >
-                Месячно / Monthly
+                {t('pricing.monthly')}
               </span>
               <motion.button
                 className="relative w-20 h-10 bg-gray-200 rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 shadow-md"
@@ -147,13 +149,13 @@ const Pricing: React.FC = () => {
                 className={`text-lg font-medium transition-all duration-300 ${isAnnual ? 'text-black scale-105' : 'text-gray-500'}`}
                 style={{ fontFamily: 'Gilroy, sans-serif' }}
               >
-                Годовой / Annual
+                {t('pricing.annual')}
                 <motion.span 
                   className="ml-2 text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full border border-gray-300"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", duration: 0.15 }}
                 >
-                  экономия 17% / Save 17%
+                  {t('pricing.discount')}
                 </motion.span>
               </span>
             </motion.div>
@@ -181,7 +183,7 @@ const Pricing: React.FC = () => {
               className="text-gray-500 text-lg"
               style={{ fontFamily: 'Gilroy, sans-serif' }}
             >
-              Все планы включают базовую поддержку / All plans include basic support
+              {t('pricing.note')}
             </motion.p>
           </motion.div>
 
