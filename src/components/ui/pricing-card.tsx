@@ -10,10 +10,11 @@ import { useLanguage } from '@/shared/contexts/LanguageContext';
 interface PricingPlan {
   name: string;
   description: string;
-  monthlyPrice: number;
-  annualPrice: number;
+  monthlyPrice: number | string;
+  annualPrice: number | string;
   features: string[];
   popular?: boolean;
+  isEnterprise?: boolean;
 }
 
 interface PricingCardProps {

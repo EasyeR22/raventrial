@@ -6,10 +6,11 @@ import { useLanguage } from '@/shared/contexts/LanguageContext';
 interface PricingPlan {
   name: string;
   description: string;
-  monthlyPrice: number;
-  annualPrice: number;
+  monthlyPrice: number | string;
+  annualPrice: number | string;
   features: string[];
   popular?: boolean;
+  isEnterprise?: boolean;
 }
 
 const Pricing: React.FC = () => {
@@ -18,49 +19,44 @@ const Pricing: React.FC = () => {
 
   const plans: PricingPlan[] = [
     {
-      name: t('plan.lite.name'),
-      description: t('plan.lite.description'),
-      monthlyPrice: 9,
-      annualPrice: 8,
+      name: 'Lite',
+      description: 'Для личного использования / For personal use',
+      monthlyPrice: '$0',
+      annualPrice: '$0',
       features: [
-        `${t('До 10')} ${t('feature.recording_hours')}`,
-        `5ГБ ${t('feature.storage')}`,
-        `${t('До 3')} ${t('feature.team_members')}`,
-        `${t('Базовая')} ${t('feature.analytics')}`,
-        t('feature.export')
+        '3 задачи в месяц / 3 tasks per month',
+        'Простая аналитика / Basic analytics',
+        'Экспорт в PDF / Export to PDF'
       ],
       popular: false
     },
     {
-      name: t('plan.pro.name'),
-      description: t('plan.pro.description'),
-      monthlyPrice: 35,
-      annualPrice: 29,
+      name: 'Pro',
+      description: 'Для фрилансеров и маленьких команд / For freelancers & small teams',
+      monthlyPrice: '$3',
+      annualPrice: '$30',
       features: [
-        `${t('До 50')} ${t('feature.recording_hours')}`,
-        `50ГБ ${t('feature.storage')}`,
-        `${t('До 15')} ${t('feature.team_members')}`,
-        `${t('Расширенная')} ${t('feature.analytics')}`,
-        t('feature.integrations'),
-        t('feature.support')
+        'До 30 задач в месяц / Up to 30 tasks per month',
+        'Расширенная аналитика / Advanced analytics',
+        'Интеграции с Google/Notion / Google & Notion integrations',
+        'Экспорт в PDF и Word / Export to PDF & Word'
       ],
       popular: true
     },
     {
-      name: t('plan.enterprise.name'),
-      description: t('plan.enterprise.description'),
-      monthlyPrice: 55,
-      annualPrice: 49,
+      name: 'Enterprise',
+      description: 'Для организаций / For organizations',
+      monthlyPrice: "Let's talk",
+      annualPrice: "Contact us",
       features: [
-        t('feature.unlimited_recording'),
-        `500ГБ ${t('feature.storage')}`,
-        t('feature.unlimited_members'),
-        t('feature.advanced_analytics'),
-        t('feature.all_integrations'),
-        t('feature.personal_manager'),
-        t('feature.sla')
+        'Неограниченные задачи / Unlimited tasks',
+        'Командный доступ / Team access',
+        'Все интеграции / All integrations',
+        'Персональный менеджер / Dedicated manager',
+        'Приоритетная поддержка / Priority support'
       ],
-      popular: false
+      popular: false,
+      isEnterprise: true
     }
   ];
 
@@ -108,7 +104,7 @@ const Pricing: React.FC = () => {
               className="text-4xl md:text-6xl font-bold text-black mb-6"
               style={{ fontFamily: 'Gilroy, sans-serif' }}
             >
-              {t('pricing.title')}
+              💼 Тарифы / Pricing
             </motion.h2>
             <motion.p 
               className="text-xl text-gray-600 max-w-3xl mx-auto mb-12"
@@ -117,7 +113,7 @@ const Pricing: React.FC = () => {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              {t('pricing.subtitle')}
+              Выберите подходящий план для ваших потребностей / Choose the right plan for your needs
             </motion.p>
 
             {/* Enhanced Pricing Toggle */}
@@ -131,7 +127,7 @@ const Pricing: React.FC = () => {
                 className={`text-lg font-medium transition-all duration-300 ${!isAnnual ? 'text-black scale-105' : 'text-gray-500'}`}
                 style={{ fontFamily: 'Gilroy, sans-serif' }}
               >
-                {t('pricing.monthly')}
+                Месячно / Monthly
               </span>
               <motion.button
                 className="relative w-20 h-10 bg-gray-200 rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 shadow-md"
@@ -151,13 +147,13 @@ const Pricing: React.FC = () => {
                 className={`text-lg font-medium transition-all duration-300 ${isAnnual ? 'text-black scale-105' : 'text-gray-500'}`}
                 style={{ fontFamily: 'Gilroy, sans-serif' }}
               >
-                {t('pricing.annual')}
+                Годовой / Annual
                 <motion.span 
                   className="ml-2 text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full border border-gray-300"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", duration: 0.15 }}
                 >
-                  {t('pricing.discount')}
+                  экономия 17% / Save 17%
                 </motion.span>
               </span>
             </motion.div>
@@ -185,7 +181,7 @@ const Pricing: React.FC = () => {
               className="text-gray-500 text-lg"
               style={{ fontFamily: 'Gilroy, sans-serif' }}
             >
-              {t('pricing.note')}
+              Все планы включают базовую поддержку / All plans include basic support
             </motion.p>
           </motion.div>
 
@@ -197,7 +193,7 @@ const Pricing: React.FC = () => {
           transition={{ delay: 0.8 }}
         >
           <p className="text-gray-600 text-sm" style={{ fontFamily: 'Gilroy, sans-serif' }}>
-            {t('pricing.mobile_tip')}
+            Прокрутите карточки для просмотра всех функций / Scroll cards to view all features
           </p>
         </motion.div>
       </div>
